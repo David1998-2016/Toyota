@@ -25,14 +25,14 @@ public class Detalle_Mantenimiento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@ManyToOne
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idDM;
+	
+	@ManyToOne
 	@JoinColumn(name="idMantenimiento")	
 	private Mantenimiento idMantenimiento;
 	
-	@Id
 	@ManyToOne
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@JoinColumn(name="idVehiculo")	
 	private Vehiculo idVehiculo;
 	
@@ -47,12 +47,21 @@ public class Detalle_Mantenimiento implements Serializable {
 		super();
 	}
 
-	public Detalle_Mantenimiento(Mantenimiento idMantenimiento, Vehiculo idVehiculo,
+	public Detalle_Mantenimiento(int idDM, Mantenimiento idMantenimiento, Vehiculo idVehiculo,
 			@NotNull @Past(message = "No puedes seleccionar un dia que no existe") Date fechaMant) {
 		super();
+		this.idDM = idDM;
 		this.idMantenimiento = idMantenimiento;
 		this.idVehiculo = idVehiculo;
 		FechaMant = fechaMant;
+	}
+
+	public int getIdDM() {
+		return idDM;
+	}
+
+	public void setIdDM(int idDM) {
+		this.idDM = idDM;
 	}
 
 	public Mantenimiento getIdMantenimiento() {
@@ -81,6 +90,5 @@ public class Detalle_Mantenimiento implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-
+	}	
 }

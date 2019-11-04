@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name="Pet")
+@Table(name="Vehiculo")
 public class Vehiculo implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

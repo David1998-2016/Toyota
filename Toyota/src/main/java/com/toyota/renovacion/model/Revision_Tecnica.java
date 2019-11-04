@@ -3,27 +3,32 @@ package com.toyota.renovacion.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
+@Table(name="Revision_Tecnica")
 public class Revision_Tecnica implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@ManyToOne
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idRT;
+	
+	@ManyToOne
 	@JoinColumn(name="idFalla")	
 	private Falla idFalla;
 	
-	@Id
+
 	@ManyToOne
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@JoinColumn(name="idVehiculo")	
 	private Vehiculo idVehiculo;
 	
@@ -41,14 +46,23 @@ public class Revision_Tecnica implements Serializable {
 		super();
 	}
 
-	public Revision_Tecnica(Falla idFalla, Vehiculo idVehiculo,
+	public Revision_Tecnica(int idRT, Falla idFalla, Vehiculo idVehiculo,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") int cantidad,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String descripcion) {
 		super();
+		this.idRT = idRT;
 		this.idFalla = idFalla;
 		this.idVehiculo = idVehiculo;
 		Cantidad = cantidad;
 		Descripcion = descripcion;
+	}
+
+	public int getIdRT() {
+		return idRT;
+	}
+
+	public void setIdRT(int idRT) {
+		this.idRT = idRT;
 	}
 
 	public Falla getIdFalla() {
@@ -86,4 +100,6 @@ public class Revision_Tecnica implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	
 }

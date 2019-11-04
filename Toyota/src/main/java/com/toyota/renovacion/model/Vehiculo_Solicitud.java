@@ -2,6 +2,7 @@ package com.toyota.renovacion.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import pe.edu.upc.spring.model.Race;
 
@@ -35,17 +38,25 @@ public class Vehiculo_Solicitud implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="idEmpleado", nullable=false)
 	private Empleado idTecnico;
+	
+	@NotEmpty(message="No puede estar vacio")
+	@NotBlank(message="No puede estar en blanco")
+	@Column(name = "Procede", length=60, nullable=false)
+	private String Procede;
 
 	public Vehiculo_Solicitud() {
 		super();
+		
 	}
 
-	public Vehiculo_Solicitud(int idSolicitud, Vehiculo idVehiculo, Empleado idOperador, Empleado idTecnico) {
+	public Vehiculo_Solicitud(int idSolicitud, Vehiculo idVehiculo, Empleado idOperador, Empleado idTecnico,
+			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String procede) {
 		super();
 		this.idSolicitud = idSolicitud;
 		this.idVehiculo = idVehiculo;
 		this.idOperador = idOperador;
 		this.idTecnico = idTecnico;
+		Procede = procede;
 	}
 
 	public int getIdSolicitud() {
@@ -80,7 +91,15 @@ public class Vehiculo_Solicitud implements Serializable{
 		this.idTecnico = idTecnico;
 	}
 
+	public String getProcede() {
+		return Procede;
+	}
+
+	public void setProcede(String procede) {
+		Procede = procede;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
+	}	
 }
