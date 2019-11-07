@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Empleado</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"></link>
+
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/empleado.js}"></script>
+
+
+
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<form th:action="@{/empleado/registrar}" method="post" th:object="${empleado}">
+			<div class="form-group">
+				<label for="idempleado">ID:</label> <input type="text"
+					class="form-control" th:field="*{idEmpleado}"></input>
+					
+				<div class="form-group">
+					<label for="nombre">DNI:</label> <input type="text"
+						th:field="*{DNIe}" class="form-control" id="dnie"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('DNIe')}" th:errors="*{DNIe}"></div>
+				</div>					
+
+				<div class="form-group">
+					<label for="nombre">NOMBRE:</label> <input type="text"
+						th:field="*{nameEmpleado}" class="form-control" id="nombre"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('nameEmpleado')}" th:errors="*{nameEmpleado}"></div>
+				</div>
+				
+				<div class="form-group">
+					<label for="nombre">APELLIDO:</label> <input type="text"
+						th:field="*{lastnameEmpleado}" class="form-control" id="apellido"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('lastnameEmpleado')}" th:errors="*{lastnameEmpleado}"></div>
+				</div>
+				
+				<div class="form-group">
+					<label for="nombre">CELULAR:</label> <input type="text"
+						th:field="*{celEmpleado}" class="form-control" id="celular"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('celEmpleado')}" th:errors="*{celEmpleado}"></div>
+				</div>
+				
+				<div class="form-group">
+					<label for="nombre">CORREO:</label> <input type="text"
+						th:field="*{mailEmpleado}" class="form-control" id="email"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('mailEmpleado')}" th:errors="*{mailEmpleado}"></div>
+				</div>
+				
+				<div class="form-group">
+					<label for="nombre">PASS:</label> <input type="text"
+						th:field="*{passEmpleado}" class="form-control" id="password"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('passEmpleado')}" th:errors="*{passEmpleado}"></div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Aceptar</button>
+			<a href="/empleado/listar" class="btn btn-danger">Cancelar</a>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
