@@ -1,0 +1,19 @@
+create table mantenimiento(
+	id_mantenimiento int not null,
+	name_mantenimiento varchar(60) not null,
+	constraint PK_mantenimiento primary key (id_mantenimiento)
+)
+insert into mantenimiento values
+('1','CAMBIO DE ACEITE'),
+('2','CAMBIO DE PASTILLAS DE FRENO'),
+('3','CAMBIO DE RADIADOR'),
+('4','CAMBIO FILTRO DE ACEITE'),
+('5','CAMBIO DE EMPAQUE DE TAPON DE CARTER'),
+('6','CAMBIO DE INYECTORES'),
+('7','LIMPIEZA Y REGULACION DE FRENOS'),
+('8','CAMBIO DE TAMBORES DE FRENO NUEVO'),
+('9','VERIFICAR PRESION DE LAS LLANTAS'),
+('10','ALINEAMIENTO DE LAS LLANTAS'),
+('11','VERIFICAR ROTULA'),
+('12','CAMBIO DE ROTULA'),
+('13','MANTENIMIENTO DE LAS BALLESTAS')

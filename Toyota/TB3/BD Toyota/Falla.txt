@@ -1,0 +1,14 @@
+create table falla(
+	id_Falla int not null,
+	name_Falla varchar(60) not null,
+	constraint PK_falla primary key (id_Falla)
+)
+insert into falla values
+('1','RAYADURA'),
+('2','ROTURA LEVE'),
+('3','ROTURA GRAVE'),
+('4','SOBRECARGA'),
+('5','FUGA DE LIQUIDO'),
+('6','DESNIVEL'),
+('7','PINCHADURA LEVE'),
+('8','PINCHADURA GRAVE')

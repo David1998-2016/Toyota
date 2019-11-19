@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Vehiculo</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"></link>
+
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+	<!-- Los fragment se insertan ya sea con th:include o th:replace -->
+	<!-- th:include simplemente se inserta dentro del espacio asignado -->
+	<!-- th:replace remplaza todo el espacio asignado por el fragment correspondiente -->
+	<!-- sintaxis th:include/replace="rutafragment :: Nombre del fragment -->
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<!-- th:action toma la accion de un form que se ejecutara por medio de un boton-->
+		<!-- @{} Expresion de enlace -->
+		<!-- ${} Declaracion de Variable -->
+		<!-- th:object declara un objeto que sera usado por los *{} -->
+		<form th:action="@{/vehiculo/registrar}" method="post" th:object="${vehiculo}"
+		
+			enctype="multipart/form-data">
+			<div class="form-group">
+			<!-- *{} Setea la variable -->
+				<label for="idrace">ID:</label> <input type="text"
+					class="form-control" th:field="*{idVehiculo}"></input>
+
+				<div class="form-group">
+					<label for="placaV">PLACA:</label> <input type="text"
+						th:field="*{placa}" class="form-control" id="placaV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></div>
+						
+					<label for="modeloV">MODELO:</label> <input type="text"
+						th:field="*{modelo}" class="form-control" id="modeloV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></div>
+						
+					<label for="anioV">AÑO:</label> <input type="text"
+						th:field="*{anio}" class="form-control" id="anioV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('anio')}" th:errors="*{anio}"></div>
+						
+					<label for="precioV">PRECIO:</label> <input type="text"
+						th:field="*{precio}" class="form-control" id="precioV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
+					
+					<label for="estadoV">ESTADO:</label> <input type="text"
+						th:field="*{estado}" class="form-control" id="estadoV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></div>
+						
+					<label for="dueno" class=" col-sm-2 col-form-label">Dueno: </label> <select
+						class="form-control" th:field="*{dueno.idDueno}">
+						<option th:each="d: ${listaDuenos}" th:value="${d.idDueno}"
+							th:text="${d.nameDueno}"
+							th:selected="(${d.idDueno} == *{dueno.idDueno})"></option>
+					</select>
+
+				</div>
+
+			</div>
+
+			<button type="submit" class="btn btn-primary">Aceptar</button>
+			<a href="/vehiculo/listar" class="btn btn-danger">Cancelar</a>
+
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
