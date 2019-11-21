@@ -9,11 +9,11 @@ create table empleado(
 	constraint PK_Empleado primary key (id_Empleado)
 )
 insert into empleado values
-('1','60461310','ANGEL','NOVOA','905821278','angel_novoa@toyota.com.pe','NOVOA276'),
-('2','22912226','MARCELO','PINO','915817568','marcelo_pino@toyota.com.pe','PINO76'),
-('3','66284069','BENJAMIN','MARTINEZ','957140136','benjamin_martinez@toyota.com.pe','MARTINEZ398'),
-('4','16298527','RENATO','CASTILLO','934327555','renato_castillo@toyota.com.pe','CASTILLO243'),
-('5','12922239','FABRICIO','GARCIA','972830066','fabricio_garcia@toyota.com.pe','GARCIA282'),
-('6','98434444','SEBASTIAN','HUAMAN','991572890','sebastian_huaman@toyota.com.pe','HUAMAN63'),
-('7','33312279','ALFONSO','BARROETA','997936262','alfonso_barroeta@toyota.com.pe','BARROETA413'),
-('8','89857622','MAURO','DAVILA','955805076','mauro_davila@toyota.com.pe','DAVILA320')
+('12','60461310','ANGEL','NOVOA','905821278','angel_novoa@toyota.com.pe','$2a$10$2.uz66A86YCFGGFj6nVLbuSHdVyRusqiRvK0cnbqg2YHxjiiLywa6','EMPL'),
+('103','22912226','MARCELO','PINO','915817568','marcelo_pino@toyota.com.pe','$2a$10$EvUNvx5dAz.YcI6IAkEGhOzu2617mtEAQo76/wQh.ZmmiNi.DFeuu','EMPL'),
+('104','66284069','BENJAMIN','MARTINEZ','957140136','benjamin_martinez@toyota.com.pe','$2a$10$yQPlmkCRUyDRo8RAX4nEJe2CvjW5SAoYih8YkUDj7acu8NmT0lRk.','EMPL'),
+('105','16298527','RENATO','CASTILLO','934327555','renato_castillo@toyota.com.pe','$2a$10$byd3sLrBWE6L2TgDOG81seJQT20Ee4FuQSJ5gQ1gfskwbLjI0wMJ2','EMPL'),
+('106','12922239','FABRICIO','GARCIA','972830066','fabricio_garcia@toyota.com.pe','$2a$10$SinFsDNNBD4VWLRWbd7P6uHEhFnzhQtsDkMHa82Xza7BMX/iBOUiS','EMPL'),
+('107','98434444','SEBASTIAN','HUAMAN','991572890','sebastian_huaman@toyota.com.pe','$2a$10$nCd0giMrv1xaKam2Gh31UeLgshZUqnYxkdg39KYlVgPCaErFvcPOW','EMPL'),
+('108','33312279','ALFONSO','BARROETA','997936262','alfonso_barroeta@toyota.com.pe','$2a$10$k/qGgLI/8pGj/AoQ8o.EvexpF6qEOdKWN0JKt1y7pkz/H/hSzK2/u','EMPL'),
+('109','89857622','MAURO','DAVILA','955805076','mauro_davila@toyota.com.pe','$2a$10$1KY.RAIMrs9gxFOBFM4iLuoVccTIOjjwylx4dsa8Zs/2i5/wPLLmO','EMPL')

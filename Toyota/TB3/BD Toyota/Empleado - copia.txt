@@ -9,11 +9,11 @@ create table empleado(
 	constraint PK_Empleado primary key (id_Empleado)
 )
 insert into empleado values
-('1','60461310','ANGEL','NOVOA','905821278','angel_novoa@toyota.com.pe','NOVOA276'),
-('2','22912226','MARCELO','PINO','915817568','marcelo_pino@toyota.com.pe','PINO76'),
-('3','66284069','BENJAMIN','MARTINEZ','957140136','benjamin_martinez@toyota.com.pe','MARTINEZ398'),
-('4','16298527','RENATO','CASTILLO','934327555','renato_castillo@toyota.com.pe','CASTILLO243'),
-('5','12922239','FABRICIO','GARCIA','972830066','fabricio_garcia@toyota.com.pe','GARCIA282'),
-('6','98434444','SEBASTIAN','HUAMAN','991572890','sebastian_huaman@toyota.com.pe','HUAMAN63'),
-('7','33312279','ALFONSO','BARROETA','997936262','alfonso_barroeta@toyota.com.pe','BARROETA413'),
-('8','89857622','MAURO','DAVILA','955805076','mauro_davila@toyota.com.pe','DAVILA320')
+('1','60461310','ANGEL','NOVOA','905821278','angel_novoa@toyota.com.pe','NOVOA276','EMPL'),
+('2','22912226','MARCELO','PINO','915817568','marcelo_pino@toyota.com.pe','PINO76','EMPL'),
+('3','66284069','BENJAMIN','MARTINEZ','957140136','benjamin_martinez@toyota.com.pe','MARTINEZ398','EMPL'),
+('4','16298527','RENATO','CASTILLO','934327555','renato_castillo@toyota.com.pe','CASTILLO243','EMPL'),
+('5','12922239','FABRICIO','GARCIA','972830066','fabricio_garcia@toyota.com.pe','GARCIA282','EMPL'),
+('6','98434444','SEBASTIAN','HUAMAN','991572890','sebastian_huaman@toyota.com.pe','HUAMAN63','EMPL'),
+('7','33312279','ALFONSO','BARROETA','997936262','alfonso_barroeta@toyota.com.pe','BARROETA413','EMPL'),
+('8','89857622','MAURO','DAVILA','955805076','mauro_davila@toyota.com.pe','DAVILA320','EMPL')
