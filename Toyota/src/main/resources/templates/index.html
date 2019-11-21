@@ -288,6 +288,7 @@
                 <input type="password" value="" name="PASS" class="pass" id="mc-pass" placeholder="Ingresa tu contraseña" required="">
 				 <a th:href="@{/dueno/listar}"><input type="submit" name="subscribe" value="Entrar">
 				 <a th:href="@{/empleado/listar}"><input type="submit" name="empleado" value="Empleado">
+				 <form th:action="@{/logout}" method="post"><input type="submit" value="Cerrar Sesion"/></form>
               </div>
 				
             </div>

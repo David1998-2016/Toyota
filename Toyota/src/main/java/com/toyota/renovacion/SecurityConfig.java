@@ -16,7 +16,7 @@ import com.toyota.renovacion.service.UserService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     String[] resources = new String[]{
-            "/include/**","/css/**","/fragments/**","/imagenes/**","/images/**","/js/**","/layer/**"
+            "/include/**","/css/**","/fragments/**","/imagenes/**","/img/**","/images/**","/js/**","/layer/**"
     };
 	
 	@Autowired
@@ -41,9 +41,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 		
 		.authorizeRequests()
-		.anyRequest()
-		.authenticated()
-		.and()
-		.httpBasic();
+        .antMatchers(resources).permitAll()  
+        .antMatchers("/","/index").permitAll()
+	        .anyRequest().authenticated()
+	        .and()
+	    .formLogin()
+	        .loginPage("/login")
+	        .permitAll()
+	        .defaultSuccessUrl("/menu")
+	        .failureUrl("/login?error=true")
+	        .usernameParameter("username")
+	        .passwordParameter("password")
+	        .and()
+	    .logout()
+	        .permitAll()
+	        .logoutSuccessUrl("/login?logout");
 	}
 }

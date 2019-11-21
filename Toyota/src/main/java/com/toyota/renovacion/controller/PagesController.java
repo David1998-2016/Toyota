@@ -11,5 +11,9 @@ public class PagesController {
   public String irRaceBienvenido() {
     return "index";
   }
+  @RequestMapping("/login")
+	public String menu() {
+		return "log-in";
+	}
 
 }
