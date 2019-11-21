@@ -7,11 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.toyota.renovacion.model.Dueno;
 import com.toyota.renovacion.model.Empleado;
 
 @Repository
 public interface IEmpleadoDAO extends JpaRepository<Empleado, Integer>
 {
-	@Query("from Empleado r where r.lastnameEmpleado like %:lastnameEmpleado%")
-	List<Empleado> buscarNombre(@Param("lastnameEmpleado") String lastnameEmpleado);
+	Dueno findByDNIe(String DNIe);
+	
+	@Query("from Empleado r where r.DNIe like %:DNIe%")
+	List<Empleado> buscarNombre(@Param("DNIe") String DNIe);
 }

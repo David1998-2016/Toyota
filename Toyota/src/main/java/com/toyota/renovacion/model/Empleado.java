@@ -49,8 +49,13 @@ public class Empleado implements Serializable{
 	
 	@NotEmpty(message="No puede estar vacio")
 	@NotBlank(message="No puede estar en blanco")
-	@Column(name = "passEmpleado", length=20, nullable=false)
+	@Column(name = "passEmpleado", nullable=false)
 	private String passEmpleado;
+	
+	@NotEmpty(message="No puede estar vacio")
+	@NotBlank(message="No puede estar en blanco")
+	@Column(name = "rolEmpleado", length=10, nullable=false)
+	private String rolEmpleado;
 
 	public Empleado() {
 		super();
@@ -63,7 +68,8 @@ public class Empleado implements Serializable{
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String lastnameEmpleado,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String celEmpleado,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String mailEmpleado,
-			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String passEmpleado) {
+			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String passEmpleado,
+			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String rolEmpleado) {
 		super();
 		this.idEmpleado = idEmpleado;
 		DNIe = dNIe;
@@ -72,6 +78,7 @@ public class Empleado implements Serializable{
 		this.celEmpleado = celEmpleado;
 		this.mailEmpleado = mailEmpleado;
 		this.passEmpleado = passEmpleado;
+		this.rolEmpleado = rolEmpleado;
 	}
 
 	public int getIdEmpleado() {
@@ -128,5 +135,18 @@ public class Empleado implements Serializable{
 
 	public void setPassEmpleado(String passEmpleado) {
 		this.passEmpleado = passEmpleado;
-	}		
+	}
+
+	public String getRolEmpleado() {
+		return rolEmpleado;
+	}
+
+	public void setRolEmpleado(String rolEmpleado) {
+		this.rolEmpleado = rolEmpleado;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

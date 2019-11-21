@@ -13,20 +13,20 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.toyota.renovacion.model.Dueno;
-import com.toyota.renovacion.repository.IDuenoDAO;
+import com.toyota.renovacion.repository.IEmpleadoDAO;
 
 @Service
-public class UserService implements UserDetailsService{
+public class EmpService implements UserDetailsService{
 
 	@Autowired
-	private IDuenoDAO repo;
+	private IEmpleadoDAO repo;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Dueno us = repo.findByDNI(username);
+		Dueno us = repo.findByDNIe(username);
 		
 		List<GrantedAuthority> roles = new ArrayList<>();
-		roles.add(new SimpleGrantedAuthority(us.getRolDueno()));
+		roles.add(new SimpleGrantedAuthority("ADMIN"));
 		
 		UserDetails userDet = new User(us.getDNI(),us.getPassDueno(), roles);
 		

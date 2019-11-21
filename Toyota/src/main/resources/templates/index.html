@@ -43,7 +43,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
+            <a class="site-logo" href="/">
                 <img src="images/logo.svg" alt="Homepage">
             </a>
         </div>
@@ -53,7 +53,7 @@
               <li class="current"><a class="smoothscroll" href="#home" title="intro">Inicio</a></li>
               <li><a class="smoothscroll" href="#about" title="about">Beneficios</a></li>
               <li><a class="smoothscroll" href="#features" title="features">Saber más</a></li>
-              <li><a class="smoothscroll" href="#login" title="login">Iniciar Sesión</a></li>
+              
             </ul>
 
             <ul class="header-social">
@@ -86,8 +86,11 @@
                     <a class="btn-video" href="https://www.youtube.com/embed/E15PE7iGT0U" data-lity>
                         <span class="video-icon"></span>
                     </a>
-                    <a href="#download" class="smoothscroll btn btn--primary btn--large">
+                    <a href="/vehiculo/listar" class="smoothscroll btn btn--primary btn--large">
                         Empieza Ya
+                    </a>
+                    <a href="/vehiculoEmp/listar" class="smoothscroll btn btn--primary btn--large">
+                        Ingreso Empleados
                     </a>
                 </div>
 
@@ -274,31 +277,7 @@
 
     <!-- pricing
     ================================================== -->    <!-- end s-pricing -->
-
-
-    <!-- download
-    ================================================== -->
-    <section id="login" class="s-download">
-
-        <div class="row download-content">
-            <div>
-              <div class="col-six md-seven download-content__text pull-right" data-aos="fade-up">
-                <h1 class="display-2"> Iniciar sesión</h1>
-                <input type="email" value="" name="EMAIL" class="email" id="mc-user" placeholder="Ingresa tu correo" required="">
-                <input type="password" value="" name="PASS" class="pass" id="mc-pass" placeholder="Ingresa tu contraseña" required="">
-				 <a th:href="@{/dueno/listar}"><input type="submit" name="subscribe" value="Entrar">
-				 <a th:href="@{/empleado/listar}"><input type="submit" name="empleado" value="Empleado">
-				 <form th:action="@{/logout}" method="post"><input type="submit" value="Cerrar Sesion"/></form>
-              </div>
-				
-            </div>
-<div class="download-content__image" data-aos="fade-up">
-        <img src="images/profile-550.png" 
-                     srcset="images/profile-550.png 1x, images/profile-1100.png 2x">
-      </div>
-      </div>
-
-    </section> <!-- end s-download -->
+ 
 
 
     <!-- footer
@@ -328,7 +307,7 @@
         <div class="row footer__bottom">
             <div class="col-five tab-full">
                 <div class="footer__logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="images/logo.svg" alt="Homepage">
                     </a>
                 </div>

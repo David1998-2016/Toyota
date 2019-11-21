@@ -22,7 +22,6 @@ public class Vehiculo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idVehiculo;
 	
 	@NotEmpty(message="No puede estar vacio")
@@ -145,5 +144,4 @@ public class Vehiculo implements Serializable {
 		return serialVersionUID;
 	}
 	
-		
 }

@@ -38,17 +38,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 	}
 	protected void configure(HttpSecurity http) throws Exception{
-		http
-		
+		{
+		http		
 		.authorizeRequests()
         .antMatchers(resources).permitAll()  
         .antMatchers("/","/index").permitAll()
 	        .anyRequest().authenticated()
 	        .and()
 	    .formLogin()
+	    	
 	        .loginPage("/login")
 	        .permitAll()
-	        .defaultSuccessUrl("/menu")
+	        .defaultSuccessUrl("/vehiculo/listar")
 	        .failureUrl("/login?error=true")
 	        .usernameParameter("username")
 	        .passwordParameter("password")
@@ -56,5 +57,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	    .logout()
 	        .permitAll()
 	        .logoutSuccessUrl("/login?logout");
+	}}
+	@Autowired
+	public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
+		build.userDetailsService(userDetailsService).passwordEncoder(bcrypt);
+
 	}
 }

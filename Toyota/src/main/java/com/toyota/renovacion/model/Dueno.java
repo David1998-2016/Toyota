@@ -49,8 +49,13 @@ private static final long serialVersionUID =1L;
 	
 	@NotEmpty(message="No puede estar vacio")
 	@NotBlank(message="No puede estar en blanco")
-	@Column(name = "passDueno", length=20, nullable=false)
+	@Column(name = "passDueno", length=255, nullable=false)
 	private String passDueno;
+	
+	@NotEmpty(message="No puede estar vacio")
+	@NotBlank(message="No puede estar en blanco")
+	@Column(name = "rolDueno", length=10, nullable=false)
+	private String rolDueno;
 
 	public Dueno() {
 		super();
@@ -63,7 +68,8 @@ private static final long serialVersionUID =1L;
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String lastnameDueno,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String celDueno,
 			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String mailDueno,
-			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String passDueno) {
+			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String passDueno,
+			@NotEmpty(message = "No puede estar vacio") @NotBlank(message = "No puede estar en blanco") String rolDueno) {
 		super();
 		this.idDueno = idDueno;
 		DNI = dNI;
@@ -72,6 +78,7 @@ private static final long serialVersionUID =1L;
 		this.celDueno = celDueno;
 		this.mailDueno = mailDueno;
 		this.passDueno = passDueno;
+		this.rolDueno = rolDueno;
 	}
 
 	public int getIdDueno() {
@@ -130,7 +137,16 @@ private static final long serialVersionUID =1L;
 		this.passDueno = passDueno;
 	}
 
+	public String getRolDueno() {
+		return rolDueno;
+	}
+
+	public void setRolDueno(String rolDueno) {
+		this.rolDueno = rolDueno;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}	
+	}
+	
 }

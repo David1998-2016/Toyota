@@ -13,16 +13,16 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-	<div th:replace="fragments/header :: header"></div>
+	<div th:replace="fragments/header2 :: header"></div>
 
 	<div class="container">
 		<form id="myform">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
-					<a style="border-bottom-color: green" th:href="@{/vehiculo/irRegistrar}"
+					<a style="border-bottom-color: green" th:action="@{/logout}"
 						id="add-row" type="button"
 						class="btn btn-primary btn-md left-block"> <span
-						class="glyphicon glyphicon-plus"></span> Vehiculo
+						class="glyphicon glyphicon-plus"></span> Cerrar Sesion
 					</a>
 					<a style="border-bottom-color: green" th:href="@{/vehiculo/irBuscar}"
 						id="add-row" type="button"
@@ -38,12 +38,8 @@
 								<th class="text-center">PLACA</th>
 								<th class="text-center">MODELO</th>
 								<th class="text-center">AÑO</th>
-								<th class="text-center">DUEÑO</th>
-								<th class="text-center">PRECIO</th>
-								<th class="text-center">ESTADO</th>
+								<th class="text-center">PRECIO en S/</th>
 								<th class="text-center">OPERACIÓN</th>
-								<th class="text-center">OPERACIÓN</th>
-
 							</tr>
 						</thead>
 						<tbody>
@@ -53,13 +49,9 @@
 								<td th:text="${v.Placa}"></td>
 								<td th:text="${v.Modelo}"></td>
 								<td th:text="${v.Anio}"></td>
-								<td th:text="${v.dueno.lastnameDueno}"></td>
 								<td th:text="${v.Precio}"></td>
-								<td th:text="${v.Estado}"></td>
 								
-								<!-- th:href Redirecciona -->
-								<td><a th:href="@{/vehiculo/eliminar?id=}+${v.idVehiculo}">Eliminar</a></td>
-								<td><a th:href="@{'/vehiculo/modificar/' + ${v.idVehiculo}}">Modificar</a></td>
+								<td><a th:href="@{'/vehiculo/modificar/' + ${v.idVehiculo}}">Renovar</a></td>
 
 
 							</tr>

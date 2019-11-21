@@ -62,12 +62,19 @@
 					<div class="alert alert-danger"
 						th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
 					
-					<label for="estadoV">PRECIO:</label> <input type="text"
+					<label for="estadoV">ESTADO:</label> <input type="text"
 						th:field="*{estado}" class="form-control" id="estadoV"></input>
 						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
 						<!-- #{} Expresion de mensaje -->
 					<div class="alert alert-danger"
 						th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></div>
+						
+					<label for="tramiteV">TRAMITE:</label> <input type="text"
+						th:field="*{tramite}" class="form-control" id="tramiteV"></input>
+						<!-- th:if Para establecer condiciones, las variables solo son booleanas -->
+						<!-- #{} Expresion de mensaje -->
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('tramite')}" th:errors="*{tramite}"></div>
 						
 					<label for="dueno" class=" col-sm-2 col-form-label">Dueno: </label> <select
 						class="form-control" th:field="*{dueno.idDueno}">
