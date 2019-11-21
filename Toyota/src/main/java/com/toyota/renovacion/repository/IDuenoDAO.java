@@ -12,6 +12,8 @@ import com.toyota.renovacion.model.Dueno;
 @Repository
 public interface IDuenoDAO extends JpaRepository<Dueno, Integer>
 {
+	Dueno findByDNI(String DNI);
+	
 	@Query("from Dueno r where r.nameDueno like %:nameDueno%")
 	List<Dueno> buscarNombre(@Param("nameDueno") String nameDueno);
 	
